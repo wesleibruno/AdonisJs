@@ -7,4 +7,7 @@ export default class PainelController {
   async usuarios() {
     return { response: "Usuários do painel" };
   }
+  async admin() {
+    return { response: "Roda admin" };
+  }
 }

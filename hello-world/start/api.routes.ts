@@ -1,4 +1,10 @@
 import Route from "@ioc:Adonis/Core/Route";
 
-Route.get("/painel/", "PainelController.index");
-Route.get("/painel/usuarios", "PainelController.usuarios");
+Route.group(() => {
+  Route.get("/admin/", "PainelController.admin");
+
+  Route.group(() => {
+    Route.get("/", "PainelController.index");
+    Route.get("/usuarios", "PainelController.usuarios");
+  }).prefix("/painel/");
+}).prefix("/api");
